@@ -5,7 +5,7 @@ player_score = 0
 computer_score = 0
 
 
-def word():
+def word(): 
     word_list = open("words.txt", "r").readlines()
     random_number = random.randint(0, len(word_list))
     word = word_list[random_number].rstrip()
@@ -97,6 +97,8 @@ def game():
     word_list = the_word.split()
     print("В Слове {} Букв".format(len(the_word)))
     t.sleep(0.5)
+    print("")
+    print("Слово Может Быть На Английском В Таком Случае Слово Начинаеться С Большой Буквы!")
     clue = len(the_word) * ["-"]
     print("")
     print("".join(clue))
@@ -155,11 +157,13 @@ def guess_letter():
 
 def play_again():
     print("")
+    t.sleep(0.7)
     answer = input("Сыграть Еще Раз ? y/n: ")
     if answer in ("y", "Y", "Yes", "yes", "YES", "да", "Да", "ДА", "д", "Д"):
         return answer
     else:
         print("Спасибо За Использование. Скоро Увидимся!")
+        t.sleep(1)
 
 
 def scores():
