@@ -1,5 +1,7 @@
 import time as t
 import random
+import os
+import sys
 
 player_score = 0
 computer_score = 0
@@ -22,7 +24,7 @@ def hanged(man):
        |
        |
     ==============
-    ''',
+    ''', 
     '''
        +------+
        | /    |
@@ -78,10 +80,13 @@ def hanged(man):
     ==============
     '''
     ]
+    t.sleep(0.7)
+    os.system('clear')
     return graphic[man]
 
 
 def start():
+    os.system('clear')
     print("")
     print("HangMan")
     print("=======")
@@ -160,8 +165,10 @@ def play_again():
     t.sleep(0.7)
     answer = input("Сыграть Еще Раз ? y/n: ")
     if answer in ("y", "Y", "Yes", "yes", "YES", "да", "Да", "ДА", "д", "Д"):
+        os.system('clear')
         return answer
     else:
+        print("")
         print("Спасибо За Использование. Скоро Увидимся!")
         t.sleep(1)
 
